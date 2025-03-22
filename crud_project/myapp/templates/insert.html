@@ -1,0 +1,21 @@
+<html>
+<head><title>Insert Employee</title>
+</head>
+<body>
+    <h1 align="center" display="flex" >Insert New Employee</h1>
+    <form method="POST" align="center" display="flex" style="line-height: 2;" action="{% url 'insert' %}">
+        {% csrf_token %}
+        <label>EName:</label>
+        <input type="text" name="ename" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br> 
+        <label>Phone:</label>
+        <input type="text" name="phone" required><br>
+        <label>EId:</label>
+        <input type="text" name="eid" required><br>
+        <button type="submit">Save</button>
+    </form>
+    <a  href="{% url 'index' %}" ><button>Back</button></a>
+</body>
+</html>

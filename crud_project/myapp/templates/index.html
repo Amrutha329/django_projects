@@ -1,0 +1,27 @@
+<html>
+<head><title>Employee Records</title></head>
+<body>
+    <h1>All Employees Details</h1>
+    <a href="{% url 'insert' %}"><button >Insert</button></a>
+    <table border="1" align="center" display="flex" style="line-height: 2;">
+        <tr>   <th>EName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>EID</th>
+            <th>Actions</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp.ename }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.eid }}</td>
+            <td>
+<a href="{% url 'update' emp.id %}"> <button>Update</button></a>
+<a href="{% url 'delete' emp.id %}"><button>Delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

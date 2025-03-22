@@ -1,0 +1,19 @@
+<html>
+<head><title>Update</title></head>
+<body>
+    <h1 align="center" display="flex">Update Employee Details</h1>
+    <form method="POST" align="center" display="flex" style="line-height: 2;" action="{% url 'update' emp.id %}">
+        {% csrf_token %}
+        <label>Name:</label>
+        <input type="text" name="ename" value="{{ emp.ename }}" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ emp.email }}" required><br>
+        <label>Phone:</label>
+        <input type="text" name="phone" value="{{ emp.phone }}" required><br>
+        <label>Eid:</label>
+        <input type="text" name="eid" value="{{ emp.eid }}" required><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'index' %}"><button>Back</button></a>
+</body>
+</html>
